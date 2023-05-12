@@ -39,7 +39,9 @@ os.chdir("../..")
 # Read CSV data
 scraped_teams_files = glob.glob("./submodules/genshin-spiral-abyss-teams-compilation/inputs/*.csv")
 named_teams_files = glob.glob("./submodules/genshin-spiral-abyss-teams-compilation/genshinTeamsNamed*.csv")
-df = pd.concat((pd.read_csv(f, names=range(4)) for f in scraped_teams_files + named_teams_files), ignore_index=True)
+df_scraped = pd.concat((pd.read_csv(f, names=range(4)) for f in scraped_teams_files), ignore_index=True)
+df_named = pd.concat((pd.read_csv(f, usecols=range(4), names=range(5)) for f in named_teams_files), ignore_index=True)
+df = pd.concat((df_scraped, df_named), ignore_index=True)
 
 # Drop Traveller with no specified element
 df.replace("Traveler", None, inplace=True)
