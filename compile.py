@@ -3,6 +3,7 @@
 from datetime import datetime
 import json
 import os
+import warnings
 
 
 def to_snake(s):
@@ -10,13 +11,32 @@ def to_snake(s):
 
 
 json_data = {
-	"version": int(datetime.today().strftime("%y%m%d"))
+	"version": int(datetime.today().strftime("%y%m%d")),
+	"characters": {},
 }
 
 # Load characters' data from JSON
 with open("automatic/characters.genshindev-api.json") as f:
 	chars = json.load(f)
-	json_data["characters"] = dict((to_snake(c["name"]), c) for c in chars)
+	characters_data = dict((to_snake(c["name"]), c) for c in chars)
+
+	with open("manual/release-dates.json") as f:
+		release_dates = json.load(f)
+
+		for character_id in release_dates:
+			subs_character_id = "traveler" if character_id.startswith("traveler") else character_id
+
+			if (subs_character_id not in characters_data):
+				warnings.warn(f"Data for character ID {subs_character_id} is missing")
+
+				json_data["characters"][character_id] = {
+					"release": release_dates[character_id]
+				}
+
+				continue
+
+			json_data["characters"][character_id] = characters_data[subs_character_id]
+			json_data["characters"][character_id]["release"] = release_dates[character_id]
 
 out_file = "output/data.json"
 
