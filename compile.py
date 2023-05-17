@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from datetime import datetime
+import glob
 import json
 import os
 import warnings
@@ -37,6 +38,20 @@ with open("automatic/characters.genshindev-api.json") as f:
 
 			json_data["characters"][character_id] = characters_data[subs_character_id]
 			json_data["characters"][character_id]["release"] = release_dates[character_id]
+
+
+def extract_tierlist(path):
+	f = open(path)
+	json_data = json.load(f)
+	f.close()
+	return json_data
+
+
+JSONs = glob.glob("./automatic/tierlist*.json")
+tier_lists = [extract_tierlist(JSON) for JSON in JSONs]
+
+for character_id, score in tier_lists[0].items():
+	json_data["characters"][character_id]["score"] = score
 
 out_file = "output/data.json"
 
