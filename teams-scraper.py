@@ -6,6 +6,34 @@ import numpy as np
 import os
 import pandas as pd
 
+
+def to_snake(s):
+	return s.lower().replace(" ", "_")
+
+
+def get_character_id(name):
+	try:
+		return {
+			"Baizhuer": "baizhu",
+			"Heizou": "shikanoin_heizou",
+			"Kazuha": "kaedehara_kazuha",
+			"Raiden": "raiden_shogun",
+		}[name]
+	except KeyError:
+		if name.startswith("Traveler"):
+			return "traveler_" + to_snake(name[8:])
+
+		return to_snake(name).replace("(", "").replace(")", "")
+
+
+def flatten(lst):
+	return [item for sublist in lst for item in sublist]
+
+
+def list_uniques(lst):
+	return list(dict.fromkeys(lst))
+
+
 # Execute Gottsmillk's scraping scripts
 os.chdir("./submodules/genshin-spiral-abyss-teams-compilation")
 
@@ -31,7 +59,7 @@ scripts = [
 for script in scripts:
 	try:
 		exec(open(script['path']).read())
-	except:
+	except Exception:
 		print(f"Failed fetching team presets from {script['name']}")
 
 os.chdir("../..")
@@ -58,6 +86,10 @@ df = pd.DataFrame(sorted_np, columns=range(4)).astype("string")
 # Remove parties with missing members and duplicates
 df.dropna(inplace=True)
 df.drop_duplicates(inplace=True)
+
+for name in list_uniques(flatten([df[col].unique() for col in df])):
+	character_id = get_character_id(name)
+	df.replace({name: character_id}, inplace=True)
 
 # Write to file
 json.dump(df.values.tolist(), open("automatic/presets.gottsmillk.json", "w"), sort_keys=True)
