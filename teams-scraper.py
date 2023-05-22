@@ -14,10 +14,17 @@ def to_snake(s):
 def get_character_id(name):
 	try:
 		return {
+			"Ayaka": "kamisato_ayaka",
+			"Ayato": "kamisato_ayato",
 			"Baizhuer": "baizhu",
 			"Heizou": "shikanoin_heizou",
+			"Itto": "arataki_itto",
 			"Kazuha": "kaedehara_kazuha",
+			"Kokomi": "sangonomiya_kokomi",
 			"Raiden": "raiden_shogun",
+			"Sara": "kujou_sara",
+			"Shinobu": "kuki_shinobu",
+			"Yae": "yae_miko",
 		}[name]
 	except KeyError:
 		if name.startswith("Traveler"):
