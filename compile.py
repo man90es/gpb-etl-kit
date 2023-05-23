@@ -4,11 +4,20 @@ from datetime import datetime
 import glob
 import json
 import os
+import pandas as pd
 import warnings
 
 
 def to_snake(s):
 	return s.lower().replace(" ", "_")
+
+
+def flatten(lst):
+	return [item for sublist in lst for item in sublist]
+
+
+def list_uniques(lst):
+	return list(dict.fromkeys(lst))
 
 
 json_data = {
@@ -52,6 +61,20 @@ tier_lists = [extract_tierlist(JSON) for JSON in JSONs]
 
 for character_id, score in tier_lists[0].items():
 	json_data["characters"][character_id]["score"] = score
+
+
+def parse_presets():
+	df_presets = pd.read_json("automatic/presets.gottsmillk.json")
+
+	for character_id in list_uniques(flatten([df_presets[col].unique() for col in df_presets])):
+		numeric_id = json_data["characters"][character_id]["id"] if "id" in json_data["characters"][character_id] else None
+		df_presets.replace({character_id: numeric_id}, inplace=True)
+
+	df_presets.dropna(inplace=True)
+	return df_presets.astype(int).values.tolist()
+
+
+json_data["presets"] = parse_presets()
 
 out_file = "output/data.json"
 
