@@ -48,6 +48,12 @@ with open("automatic/characters.genshindev-api.json") as f:
 			json_data["characters"][character_id] = characters_data[subs_character_id]
 			json_data["characters"][character_id]["release"] = release_dates[character_id]
 
+	with open("manual/roles.json") as f:
+		roles = json.load(f)
+
+		for character_id in roles:
+			json_data["characters"][character_id]["roles"] = roles[character_id]
+
 
 def extract_tierlist(path):
 	f = open(path)
