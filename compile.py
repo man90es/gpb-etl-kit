@@ -82,6 +82,12 @@ def parse_presets():
 
 json_data["presets"] = parse_presets()
 
+with open("manual/index.json") as f:
+    index = json.load(f)
+
+    for key in index:
+        json_data[key] = index[key]
+
 out_file = "output/data.json"
 
 # Try to backup the previous version and write a new version
