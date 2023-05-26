@@ -83,10 +83,13 @@ def parse_presets():
 json_data["presets"] = parse_presets()
 
 with open("manual/index.json") as f:
-    index = json.load(f)
+	index = json.load(f)
 
-    for key in index:
-        json_data[key] = index[key]
+	for key in index:
+		json_data[key] = index[key]
+
+with open("manual/reactions.json") as f:
+	json_data["reactions"] = json.load(f)
 
 out_file = "output/data.json"
 
