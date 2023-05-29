@@ -91,6 +91,9 @@ with open("manual/index.json") as f:
 with open("manual/reactions.json") as f:
 	json_data["reactions"] = json.load(f)
 
+with open("manual/spritesheets.json") as f:
+	json_data["spritesheets"] = json.load(f)
+
 out_file = "output/data.json"
 
 # Try to backup the previous version and write a new version
