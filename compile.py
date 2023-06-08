@@ -1,23 +1,12 @@
 #!/usr/bin/env python
 
 from datetime import datetime
+from utils import string_to_snake, list_flatten, list_uniques
 import glob
 import json
 import os
 import pandas as pd
 import warnings
-
-
-def to_snake(s):
-	return s.lower().replace(" ", "_")
-
-
-def flatten(lst):
-	return [item for sublist in lst for item in sublist]
-
-
-def list_uniques(lst):
-	return list(dict.fromkeys(lst))
 
 
 json_data = {
@@ -28,7 +17,7 @@ json_data = {
 # Load characters' data from JSON
 with open("automatic/characters.genshindev-api.json") as f:
 	chars = json.load(f)
-	characters_data = dict((to_snake(c["name"]), c) for c in chars)
+	characters_data = dict((string_to_snake(c["name"]), c) for c in chars)
 
 	with open("manual/release-dates.json") as f:
 		release_dates = json.load(f)
@@ -72,7 +61,7 @@ for character_id, score in tier_lists[0].items():
 def parse_presets():
 	df_presets = pd.read_json("automatic/presets.gottsmillk.json")
 
-	for character_id in list_uniques(flatten([df_presets[col].unique() for col in df_presets])):
+	for character_id in list_uniques(list_flatten([df_presets[col].unique() for col in df_presets])):
 		numeric_id = json_data["characters"][character_id]["id"] if "id" in json_data["characters"][character_id] else None
 		df_presets.replace({character_id: numeric_id}, inplace=True)
 

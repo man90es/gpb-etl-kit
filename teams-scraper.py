@@ -1,14 +1,11 @@
 #!env python
 
+from utils import string_to_snake, list_flatten, list_uniques
 import glob
 import json
 import numpy as np
 import os
 import pandas as pd
-
-
-def to_snake(s):
-	return s.lower().replace(" ", "_")
 
 
 def get_character_id(name):
@@ -28,17 +25,9 @@ def get_character_id(name):
 		}[name]
 	except KeyError:
 		if name.startswith("Traveler"):
-			return "traveler_" + to_snake(name[8:])
+			return "traveler_" + string_to_snake(name[8:])
 
-		return to_snake(name).replace("(", "").replace(")", "")
-
-
-def flatten(lst):
-	return [item for sublist in lst for item in sublist]
-
-
-def list_uniques(lst):
-	return list(dict.fromkeys(lst))
+		return string_to_snake(name).replace("(", "").replace(")", "")
 
 
 # Execute Gottsmillk's scraping scripts
@@ -94,7 +83,7 @@ df = pd.DataFrame(sorted_np, columns=range(4)).astype("string")
 df.dropna(inplace=True)
 df.drop_duplicates(inplace=True)
 
-for name in list_uniques(flatten([df[col].unique() for col in df])):
+for name in list_uniques(list_flatten([df[col].unique() for col in df])):
 	character_id = get_character_id(name)
 	df.replace({name: character_id}, inplace=True)
 

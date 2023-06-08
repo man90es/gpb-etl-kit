@@ -2,3 +2,4 @@
 /manual/*
 /output/*
 !.gitkeep
+__pycache__

@@ -1,6 +1,7 @@
 #!env python
 
 from bs4 import BeautifulSoup
+from utils import string_to_snake
 import json
 import requests
 
@@ -9,10 +10,6 @@ page = requests.get(uri)
 
 soup = BeautifulSoup(page.content, "html.parser")
 tier_elements = soup.find_all("div", class_="dropzone-row")
-
-
-def to_snake(s):
-	return s.lower().replace(" ", "_")
 
 
 def get_character_id(name):
@@ -29,7 +26,7 @@ def get_character_id(name):
 			"Sara": "kujou_sara",
 		}[name]
 	except KeyError:
-		return to_snake(name).replace("(", "").replace(")", "")
+		return string_to_snake(name).replace("(", "").replace(")", "")
 
 
 characters = {}
