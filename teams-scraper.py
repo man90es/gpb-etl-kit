@@ -1,33 +1,11 @@
 #!env python
 
-from utils import string_to_snake, list_flatten, list_uniques
+from utils import list_flatten, list_uniques, get_character_id
 import glob
 import json
 import numpy as np
 import os
 import pandas as pd
-
-
-def get_character_id(name):
-	try:
-		return {
-			"Ayaka": "kamisato_ayaka",
-			"Ayato": "kamisato_ayato",
-			"Baizhuer": "baizhu",
-			"Heizou": "shikanoin_heizou",
-			"Itto": "arataki_itto",
-			"Kazuha": "kaedehara_kazuha",
-			"Kokomi": "sangonomiya_kokomi",
-			"Raiden": "raiden_shogun",
-			"Sara": "kujou_sara",
-			"Shinobu": "kuki_shinobu",
-			"Yae": "yae_miko",
-		}[name]
-	except KeyError:
-		if name.startswith("Traveler"):
-			return "traveler_" + string_to_snake(name[8:])
-
-		return string_to_snake(name).replace("(", "").replace(")", "")
 
 
 # Execute Gottsmillk's scraping scripts
