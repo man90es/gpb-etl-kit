@@ -26,6 +26,7 @@ def get_character_id(name):
 			"Sara": "kujou_sara",
 			"Shinobu": "kuki_shinobu",
 			"Yae": "yae_miko",
+			"Yan Fei": "yanfei",
 		}[name]
 	except KeyError:
 		snake = string_to_snake(name)
