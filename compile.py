@@ -62,7 +62,8 @@ def parse_presets():
 	df_presets = pd.read_json("automatic/presets.gottsmillk.json")
 
 	for character_id in list_uniques(list_flatten([df_presets[col].unique() for col in df_presets])):
-		numeric_id = json_data["characters"][character_id]["id"] if "id" in json_data["characters"][character_id] else None
+		is_known_char = character_id in json_data["characters"] and "id" in json_data["characters"][character_id]
+		numeric_id = json_data["characters"][character_id]["id"] if is_known_char else None
 		df_presets.replace({character_id: numeric_id}, inplace=True)
 
 	df_presets.dropna(inplace=True)
