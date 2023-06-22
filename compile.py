@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from datetime import datetime
-from utils import string_to_snake, list_flatten, list_uniques
+from utils import list_flatten, list_uniques, get_character_id
 import glob
 import json
 import os
@@ -17,31 +17,18 @@ json_data = {
 # Load characters' data from JSON
 with open("automatic/characters.genshindev-api.json") as f:
 	chars = json.load(f)
-	characters_data = dict((string_to_snake(c["name"]), c) for c in chars)
-
-	with open("manual/release-dates.json") as f:
-		release_dates = json.load(f)
-
-		for character_id in release_dates:
-			subs_character_id = "traveler" if character_id.startswith("traveler") else character_id
-
-			if (subs_character_id not in characters_data):
-				warnings.warn(f"Data for character ID {subs_character_id} is missing")
-
-				json_data["characters"][character_id] = {
-					"release": release_dates[character_id]
-				}
-
-				continue
-
-			json_data["characters"][character_id] = characters_data[subs_character_id]
-			json_data["characters"][character_id]["release"] = release_dates[character_id]
+	characters_data = dict((get_character_id(c["name"], c["element"]), c) for c in chars)
 
 	with open("manual/roles.json") as f:
 		roles = json.load(f)
 
-		for character_id in roles:
-			json_data["characters"][character_id]["roles"] = roles[character_id]
+		for character_id in characters_data:
+			json_data["characters"][character_id] = characters_data[character_id]
+
+			if (character_id in roles):
+				json_data["characters"][character_id]["roles"] = roles[character_id]
+			else:
+				warnings.warn(f"Roles data for character ID {character_id} is missing")
 
 
 def extract_tierlist(path):
@@ -55,7 +42,11 @@ JSONs = glob.glob("./automatic/tierlist*.json")
 tier_lists = [extract_tierlist(JSON) for JSON in JSONs]
 
 for character_id, score in tier_lists[0].items():
-	json_data["characters"][character_id]["score"] = score
+	try:
+		json_data["characters"][character_id]["score"] = score
+	except KeyError:
+		warnings.warn(f"Basic data for character ID {character_id} is missing")
+
 
 
 def parse_presets():

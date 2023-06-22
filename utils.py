@@ -10,7 +10,13 @@ def list_uniques(lst):
 	return list(dict.fromkeys(lst))
 
 
-def get_character_id(name):
+def get_character_id(name, element = None):
+	if element is not None:
+		if ("Traveler" == name):
+			return string_to_snake(f"traveler_{element}")
+		else:
+			return string_to_snake(name)
+
 	try:
 		# Known aliases
 		return {
@@ -33,9 +39,11 @@ def get_character_id(name):
 
 		# Be aware of this when importing this function anywhere new
 		if name.startswith("Traveler"):
-			if "(" in name: # Genshin.gg format
+			if "(" in name:
+				# Genshin.gg format
 				return snake.replace("(", "").replace(")", "")
-			else: # Gottsmillk's scrapers' format
+			else:
+				# Gottsmillk's scrapers' format
 				return "traveler_" + snake[8:]
 
 		return snake

@@ -13,6 +13,7 @@ def extract_character(characterJSON, i):
 		"element": json_data["vision"].lower(),
 		"id": i,
 		"name": json_data["name"],
+		"release": json_data["release"],
 		"stars": json_data["rarity"],
 		"weapon": json_data["weapon"].lower(),
 	}
