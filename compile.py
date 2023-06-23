@@ -75,6 +75,15 @@ with open("manual/reactions.json") as f:
 with open("manual/spritesheets.json") as f:
 	json_data["spritesheets"] = json.load(f)
 
+with open("manual/renames.json") as f:
+	renames = json.load(f)
+
+	for character_id in json_data["characters"]:
+		name = json_data["characters"][character_id]["name"]
+
+		if name in renames:
+			json_data["characters"][character_id]["name"] = renames[name]
+
 out_file = "output/data.json"
 
 # Try to backup the previous version and write a new version
