@@ -1,0 +1,439 @@
+{
+	"albedo": [
+		"burst",
+		"off_field",
+		"amp"
+	],
+	"alhaitham": [
+		"dps",
+		"burst",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
+	"aloy": [
+		"dps",
+		"burst",
+		"off_field",
+		"amp"
+	],
+	"amber": [
+		"dps",
+		"burst",
+		"off_field",
+		{
+			"c": 6,
+			"role": "amp"
+		}
+	],
+	"arataki_itto": [
+		"dps",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
+	"baizhu": [
+		"amp",
+		"heal",
+		"off_field",
+		"shield"
+	],
+	"barbara": [
+		{
+			"c": 2,
+			"role": "amp"
+		},
+		"heal"
+	],
+	"beidou": [
+		"dps",
+		"burst",
+		"off_field",
+		{
+			"c": 6,
+			"role": "amp"
+		},
+		{
+			"c": 1,
+			"role": "shield"
+		}
+	],
+	"bennett": [
+		"burst",
+		"amp",
+		"heal"
+	],
+	"candace": [
+		"amp",
+		{
+			"c": 6,
+			"role": "off_field"
+		}
+	],
+	"chongyun": [
+		"dps",
+		"burst",
+		"amp"
+	],
+	"collei": [
+		"off_field"
+	],
+	"cyno": [
+		"dps"
+	],
+	"dehya": [
+		"dps"
+	],
+	"diluc": [
+		"dps",
+		"burst"
+	],
+	"diona": [
+		"off_field",
+		"burst",
+		{
+			"c": 6,
+			"role": "amp"
+		},
+		"heal",
+		"shield"
+	],
+	"dori": [
+		"off_field",
+		"heal"
+	],
+	"eula": [
+		"dps",
+		"burst",
+		"amp"
+	],
+	"faruzan": [
+		"dps",
+		"burst",
+		"off_field",
+		"amp",
+		"cc"
+	],
+	"fischl": [
+		"dps",
+		"off-field"
+	],
+	"freminet": [
+		"dps"
+	],
+	"ganyu": [
+		"dps",
+		"off-field",
+		"amp"
+	],
+	"gorou": [
+		"off-field",
+		"amp",
+		{
+			"c": 4,
+			"role": "heal"
+		}
+	],
+	"hu_tao": [
+		"dps",
+		"burst",
+		"amp"
+	],
+	"jean": [
+		"burst",
+		"off_field",
+		{
+			"c": 4,
+			"role": "amp"
+		},
+		"heal"
+	],
+	"kaedehara_kazuha": [
+		"burst",
+		"off_field",
+		"amp",
+		"cc"
+	],
+	"kaeya": [
+		"dps",
+		"off_field"
+	],
+	"kamisato_ayaka": [
+		"dps",
+		"burst",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
+	"kamisato_ayato": [
+		"dps"
+	],
+	"kaveh": [
+		"dps"
+	],
+	"keqing": [
+		"dps",
+		"burst"
+	],
+	"kirara": [
+		{
+			"c": 6,
+			"role": "amp"
+		},
+		"dps",
+		"shield"
+	],
+	"klee": [
+		"dps",
+		"burst",
+		"off_field",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
+	"kujou_sara": [
+		"burst",
+		"amp"
+	],
+	"kuki_shinobu": [
+		"burst",
+		"off_field",
+		"heal"
+	],
+	"layla": [
+		"off_field",
+		"shield",
+		"burst",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
+	"lisa": [
+		"dps",
+		"off_field",
+		"amp"
+	],
+	"lynette": [
+		"dps",
+		"off_field",
+		"amp",
+		"cc"
+	],
+	"lyney": [
+		"dps",
+		"cc",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
+	"mika": [
+		"amp",
+		"heal"
+	],
+	"mona": [
+		"burst",
+		"off_field",
+		"amp",
+		"cc"
+	],
+	"nahida": [
+		"off_field",
+		"amp"
+	],
+	"nilou": [
+		"dps",
+		"burst",
+		"amp"
+	],
+	"ningguang": [
+		"dps",
+		"burst",
+		"amp",
+		"shield"
+	],
+	"noelle": [
+		"dps",
+		{
+			"c": 4,
+			"role": "off_field"
+		},
+		"heal",
+		"shield"
+	],
+	"qiqi": [
+		"off_field",
+		"heal"
+	],
+	"raiden_shogun": [
+		"dps",
+		"burst",
+		"off_field",
+		"amp"
+	],
+	"razor": [
+		"dps",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
+	"rosaria": [
+		"dps",
+		"burst",
+		"off_field",
+		"amp"
+	],
+	"sangonomiya_kokomi": [
+		"off_field",
+		"heal"
+	],
+	"sayu": [
+		"burst",
+		"off_field",
+		"heal"
+	],
+	"shenhe": [
+		"burst",
+		"off_field",
+		"amp"
+	],
+	"shikanoin_heizou": [
+		"burst",
+		"amp"
+	],
+	"sucrose": [
+		"burst",
+		"off_field",
+		"amp",
+		"cc"
+	],
+	"tartaglia": [
+		"dps",
+		"burst",
+		"amp"
+	],
+	"thoma": [
+		"off_field",
+		"shield"
+	],
+	"tighnari": [
+		"dps",
+		"off_field",
+		"burst",
+		"cc"
+	],
+	"traveler_anemo": [
+		{
+			"c": 6,
+			"role": "amp"
+		},
+		"cc"
+	],
+	"traveler_dendro": [
+		"burst",
+		"amp"
+	],
+	"traveler_electro": [
+		"burst",
+		"amp"
+	],
+	"traveler_geo": [
+		"burst",
+		"amp"
+	],
+	"traveler_hydro": [
+		{
+			"c": 6,
+			"role": "heal"
+		},
+		"off_field"
+	],
+	"venti": [
+		"burst",
+		"off_field",
+		{
+			"c": 2,
+			"role": "amp"
+		},
+		"cc"
+	],
+	"wanderer": [
+		"dps"
+	],
+	"xiangling": [
+		"off_field",
+		{
+			"c": 6,
+			"role": "amp"
+		}
+	],
+	"xiao": [
+		"dps"
+	],
+	"xingqiu": [
+		"burst",
+		"off_field",
+		{
+			"c": 2,
+			"role": "amp"
+		}
+	],
+	"xinyan": [
+		"dps",
+		"burst",
+		"amp",
+		"shield"
+	],
+	"yae_miko": [
+		"dps",
+		"burst",
+		"off_field",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
+	"yanfei": [
+		"dps",
+		{
+			"c": 4,
+			"role": "shield"
+		}
+	],
+	"yaoyao": [
+		"burst",
+		"off_field",
+		"heal"
+	],
+	"yelan": [
+		"dps",
+		"off_field"
+	],
+	"yoimiya": [
+		"dps",
+		"off_field",
+		"amp"
+	],
+	"yun_jin": [
+		"burst",
+		"amp"
+	],
+	"zhongli": [
+		"dps",
+		"burst",
+		"off_field",
+		"amp",
+		{
+			"c": 6,
+			"role": "heal"
+		},
+		"shield",
+		"cc"
+	]
+}

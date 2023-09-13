@@ -1,0 +1,68 @@
+{
+	"elements": {
+		"anemo": {
+			"name": "Anemo"
+		},
+		"cryo": {
+			"name": "Cryo"
+		},
+		"dendro": {
+			"name": "Dendro"
+		},
+		"electro": {
+			"name": "Electro"
+		},
+		"geo": {
+			"name": "Geo"
+		},
+		"hydro": {
+			"name": "Hydro"
+		},
+		"physical": {
+			"name": "Physical"
+		},
+		"pyro": {
+			"name": "Pyro"
+		}
+	},
+    "roles": {
+        "amp": {
+            "name": "Damage Amp"
+        },
+        "burst": {
+            "name": "Burst DPS"
+        },
+        "cc": {
+            "name": "CC"
+        },
+        "dps": {
+            "name": "DPS"
+        },
+        "heal": {
+            "name": "Healer"
+        },
+        "off_field": {
+            "name": "Off-field DPS"
+        },
+        "shield": {
+            "name": "Shielder"
+        }
+    },
+    "weapons": {
+        "bow": {
+            "name": "Bow"
+        },
+        "catalyst": {
+            "name": "Catalyst"
+        },
+        "claymore": {
+            "name": "Claymore"
+        },
+        "polearm": {
+            "name": "Polearm"
+        },
+        "sword": {
+            "name": "Sword"
+        }
+    }
+}

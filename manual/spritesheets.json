@@ -1,0 +1,25 @@
+{
+	"elements": {
+		"path": "elements",
+		"extensions": ["webp", "png"],
+		"indices":{
+			"anemo": [5, 0],
+			"cryo": [3, 0],
+			"dendro": [6, 0],
+			"electro": [1, 0],
+			"geo": [2, 0],
+			"hydro": [0, 0],
+			"pyro": [4, 0]
+		}
+	},
+	"backgrounds": {
+		"path": "character-backgrounds",
+		"extensions": ["webp", "png"],
+		"indices": {
+			"purple": [0, 0],
+			"yellow": [1, 0],
+			"grey": [2, 0],
+			"red": [3, 0]
+		}
+	}
+}
