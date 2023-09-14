@@ -7,6 +7,9 @@ if [[ ! -d ".venv" ]]; then
 	source .venv/bin/activate
 	pip install -r requirements.txt
 	deactivate
+
+	echo 'Fetching submodules'
+	git submodule update --init --recursive
 fi
 
 source .venv/bin/activate
