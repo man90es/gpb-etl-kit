@@ -3,7 +3,7 @@
 	url = git@github.com:genshindev/api.git
 [submodule "submodules/genshin-spiral-abyss-teams-compilation"]
 	path = submodules/genshin-spiral-abyss-teams-compilation
-	url = git@github.com:octoman90/genshin-spiral-abyss-teams-compilation.git
+	url = git@github.com:man90es/genshin-spiral-abyss-teams-compilation.git
 [submodule "submodules/Spiral-Stats"]
 	path = submodules/Spiral-Stats
 	url = git@github.com:piedorr/Spiral-Stats.git
