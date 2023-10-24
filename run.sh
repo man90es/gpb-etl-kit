@@ -15,7 +15,8 @@ fi
 source .venv/bin/activate
 
 echo 'Updating submodules'
-git submodule foreach 'git pull'
+git submodule sync
+git submodule update --remote
 
 echo 'Running scrapers'
 env python ./genshin-gg-tierlist-scraper.py
