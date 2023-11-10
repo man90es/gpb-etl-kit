@@ -72,6 +72,10 @@
 			"role": "off_field"
 		}
 	],
+	"charlotte": [
+		"dps",
+		"heal"
+	],
 	"chongyun": [
 		"dps",
 		"burst",
@@ -122,6 +126,12 @@
 	],
 	"freminet": [
 		"dps"
+	],
+	"furina": [
+		"dps",
+		"off_field",
+		"amp",
+		"heal"
 	],
 	"ganyu": [
 		"dps",
