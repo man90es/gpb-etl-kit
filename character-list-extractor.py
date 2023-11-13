@@ -1,7 +1,13 @@
 #!env python
 
+from utils import get_character_id
 import glob
 import json
+
+
+bg_colours = {}
+with open("manual/background-colours.json") as f:
+	bg_colours = json.load(f)
 
 
 def extract_character(characterJSON, i):
@@ -9,8 +15,13 @@ def extract_character(characterJSON, i):
 	json_data = json.load(f)
 	f.close()
 
+	element = json_data["vision"].lower()
+	char_id = get_character_id(json_data["name"], element)
+	bg = bg_colours.get(char_id, "yellow" if 5 == json_data["rarity"] else "purple")
+
 	return {
-		"element": json_data["vision"].lower(),
+		"background": bg,
+		"element": element,
 		"id": i,
 		"name": json_data["name"],
 		"release": json_data["release"],
