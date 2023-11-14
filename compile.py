@@ -96,5 +96,5 @@ except Exception:
 	pass
 finally:
 	f = open(out_file, "w")
-	f.write(json.dumps(json_data))
+	f.write(json.dumps(json_data, separators=(",", ":")))
 	f.close()
