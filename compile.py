@@ -41,12 +41,11 @@ def extract_tierlist(path):
 JSONs = glob.glob("./automatic/tierlist*.json")
 tier_lists = [extract_tierlist(JSON) for JSON in JSONs]
 
-for character_id, score in tier_lists[0].items():
-	try:
-		json_data["characters"][character_id]["score"] = score
-	except KeyError:
-		warnings.warn(f"Basic data for character ID {character_id} is missing")
-
+for character_id, character in json_data["characters"].items():
+	default_score = [7.5 if 5 == character["stars"] else 5] * 7
+	# TODO: Merge scores from multiple tier lists
+	score = tier_lists[0].get(character_id, default_score)
+	json_data["characters"][character_id]["score"] = score
 
 
 def parse_presets():
