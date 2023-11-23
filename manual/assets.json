@@ -1,0 +1,12 @@
+{
+	"portraitBg": [
+		{
+			"src": "https://cdn.hemlo.cc/images/genshin/portraitBg.webp",
+			"type": "image/webp"
+		},
+		{
+			"src": "https://cdn.hemlo.cc/images/genshin/portraitBg.png",
+			"type": "image/png"
+		}
+	]
+}

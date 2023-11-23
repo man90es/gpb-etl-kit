@@ -68,6 +68,9 @@ with open("manual/reactions.json") as f:
 with open("manual/spritesheets.json") as f:
 	json_data["spritesheets"] = json.load(f)
 
+with open("manual/assets.json") as f:
+	json_data["assets"] = json.load(f)
+
 with open("manual/renames.json") as f:
 	renames = json.load(f)
 
