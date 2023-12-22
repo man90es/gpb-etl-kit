@@ -256,6 +256,13 @@
 		"off_field",
 		"amp"
 	],
+	"navia": [
+		"dps",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
 	"neuvillette": [
 		"dps"
 	],
