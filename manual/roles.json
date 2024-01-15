@@ -76,6 +76,11 @@
 		"dps",
 		"heal"
 	],
+	"chevreuse": [
+		"off_field",
+		"heal",
+		"amp"
+	],
 	"chongyun": [
 		"dps",
 		"burst",
