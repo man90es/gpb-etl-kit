@@ -143,6 +143,9 @@
 		"off-field",
 		"amp"
 	],
+	"gaming": [
+		"dps"
+	],
 	"gorou": [
 		"off-field",
 		"amp",
@@ -400,6 +403,11 @@
 			"c": 6,
 			"role": "amp"
 		}
+	],
+	"xianyun": [
+		"heal",
+		"off_field",
+		"amp"
 	],
 	"xiao": [
 		"dps"
