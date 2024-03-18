@@ -5,6 +5,11 @@ from utils import get_character_id
 import json
 import requests
 
+
+def parse_constellation(str):
+	return int(str[-1]) if str[-1].isdigit() else 0
+
+
 c_limits = {}
 with open("manual/constellation-limits.json") as f:
 	c_limits = json.load(f)
@@ -24,7 +29,7 @@ for i, tier_element in enumerate(tier_elements):
 	min_rating = (max_rating - 10 / len(tier_elements))
 
 	for char_el in internal_tier_element.find_all(class_="tierlist-icon-wrapper"):
-		c = int(char_el.find(class_="tierlist-constellation").text[-1])
+		c = parse_constellation(char_el.find(class_="tierlist-constellation").text)
 		char_id = get_character_id(char_el.find(class_="tierlist-icon")["alt"])
 		c_limit = c_limits.get(char_id, 7)
 		chars[char_id] = [min_rating if j < c else max_rating for j in range(c_limit)]
