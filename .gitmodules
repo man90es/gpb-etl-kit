@@ -1,7 +1,3 @@
-[submodule "submodules/genshindev-api"]
-	path = submodules/genshindev-api
-	url = git@github.com:man90es/genshindev-api.git
-	branch = mistress
 [submodule "submodules/genshin-spiral-abyss-teams-compilation"]
 	path = submodules/genshin-spiral-abyss-teams-compilation
 	url = git@github.com:man90es/genshin-spiral-abyss-teams-compilation.git

@@ -1,6 +1,8 @@
 beautifulsoup4
+flake8
 numba
 numpy
 pandas
+python-dotenv
 requests
 selenium
