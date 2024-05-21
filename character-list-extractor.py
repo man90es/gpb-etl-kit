@@ -20,6 +20,7 @@ def extract_character(json_data, i):
 		"background": bg,
 		"element": element,
 		"id": i,
+		"key": json_data["id"],
 		"name": json_data["name"],
 		"release": json_data["release"],
 		"stars": json_data["rarity"],
