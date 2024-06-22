@@ -94,6 +94,9 @@
 		"burst",
 		"amp"
 	],
+	"clorinde": [
+		"dps"
+	],
 	"collei": [
 		"off_field"
 	],
@@ -334,6 +337,13 @@
 		"off_field",
 		"heal"
 	],
+	"sethos": [
+		"dps",
+		{
+			"c": 4,
+			"role": "amp"
+		}
+	],
 	"shenhe": [
 		"burst",
 		"off_field",
@@ -342,6 +352,10 @@
 	"shikanoin_heizou": [
 		"burst",
 		"amp"
+	],
+	"sigewinne": [
+		"heal",
+		"cc"
 	],
 	"sucrose": [
 		"burst",
