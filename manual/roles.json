@@ -1,12 +1,10 @@
 {
 	"albedo": [
-		"burst",
 		"off_field",
 		"amp"
 	],
 	"alhaitham": [
 		"dps",
-		"burst",
 		{
 			"c": 4,
 			"role": "amp"
@@ -14,13 +12,11 @@
 	],
 	"aloy": [
 		"dps",
-		"burst",
 		"off_field",
 		"amp"
 	],
 	"amber": [
 		"dps",
-		"burst",
 		"off_field",
 		{
 			"c": 6,
@@ -52,7 +48,6 @@
 	],
 	"beidou": [
 		"dps",
-		"burst",
 		"off_field",
 		{
 			"c": 6,
@@ -64,7 +59,6 @@
 		}
 	],
 	"bennett": [
-		"burst",
 		"amp",
 		"heal"
 	],
@@ -86,12 +80,10 @@
 	],
 	"chiori": [
 		"dps",
-		"off_field",
-		"burst"
+		"off_field"
 	],
 	"chongyun": [
 		"dps",
-		"burst",
 		"amp"
 	],
 	"clorinde": [
@@ -107,12 +99,10 @@
 		"dps"
 	],
 	"diluc": [
-		"dps",
-		"burst"
+		"dps"
 	],
 	"diona": [
 		"off_field",
-		"burst",
 		{
 			"c": 6,
 			"role": "amp"
@@ -126,12 +116,10 @@
 	],
 	"eula": [
 		"dps",
-		"burst",
 		"amp"
 	],
 	"faruzan": [
 		"dps",
-		"burst",
 		"off_field",
 		"amp",
 		"cc"
@@ -167,11 +155,9 @@
 	],
 	"hu_tao": [
 		"dps",
-		"burst",
 		"amp"
 	],
 	"jean": [
-		"burst",
 		"off_field",
 		{
 			"c": 4,
@@ -180,7 +166,6 @@
 		"heal"
 	],
 	"kaedehara_kazuha": [
-		"burst",
 		"off_field",
 		"amp",
 		"cc"
@@ -191,7 +176,6 @@
 	],
 	"kamisato_ayaka": [
 		"dps",
-		"burst",
 		{
 			"c": 4,
 			"role": "amp"
@@ -204,8 +188,7 @@
 		"dps"
 	],
 	"keqing": [
-		"dps",
-		"burst"
+		"dps"
 	],
 	"kirara": [
 		{
@@ -217,7 +200,6 @@
 	],
 	"klee": [
 		"dps",
-		"burst",
 		"off_field",
 		{
 			"c": 4,
@@ -225,18 +207,15 @@
 		}
 	],
 	"kujou_sara": [
-		"burst",
 		"amp"
 	],
 	"kuki_shinobu": [
-		"burst",
 		"off_field",
 		"heal"
 	],
 	"layla": [
 		"off_field",
 		"shield",
-		"burst",
 		{
 			"c": 4,
 			"role": "amp"
@@ -266,7 +245,6 @@
 		"heal"
 	],
 	"mona": [
-		"burst",
 		"off_field",
 		"amp",
 		"cc"
@@ -287,12 +265,10 @@
 	],
 	"nilou": [
 		"dps",
-		"burst",
 		"amp"
 	],
 	"ningguang": [
 		"dps",
-		"burst",
 		"amp",
 		"shield"
 	],
@@ -311,7 +287,6 @@
 	],
 	"raiden_shogun": [
 		"dps",
-		"burst",
 		"off_field",
 		"amp"
 	],
@@ -324,7 +299,6 @@
 	],
 	"rosaria": [
 		"dps",
-		"burst",
 		"off_field",
 		"amp"
 	],
@@ -333,7 +307,6 @@
 		"heal"
 	],
 	"sayu": [
-		"burst",
 		"off_field",
 		"heal"
 	],
@@ -345,12 +318,10 @@
 		}
 	],
 	"shenhe": [
-		"burst",
 		"off_field",
 		"amp"
 	],
 	"shikanoin_heizou": [
-		"burst",
 		"amp"
 	],
 	"sigewinne": [
@@ -358,14 +329,12 @@
 		"cc"
 	],
 	"sucrose": [
-		"burst",
 		"off_field",
 		"amp",
 		"cc"
 	],
 	"tartaglia": [
 		"dps",
-		"burst",
 		"amp"
 	],
 	"thoma": [
@@ -375,7 +344,6 @@
 	"tighnari": [
 		"dps",
 		"off_field",
-		"burst",
 		"cc"
 	],
 	"traveler_anemo": [
@@ -386,15 +354,12 @@
 		"cc"
 	],
 	"traveler_dendro": [
-		"burst",
 		"amp"
 	],
 	"traveler_electro": [
-		"burst",
 		"amp"
 	],
 	"traveler_geo": [
-		"burst",
 		"amp"
 	],
 	"traveler_hydro": [
@@ -405,7 +370,6 @@
 		"off_field"
 	],
 	"venti": [
-		"burst",
 		"off_field",
 		{
 			"c": 2,
@@ -435,7 +399,6 @@
 		"dps"
 	],
 	"xingqiu": [
-		"burst",
 		"off_field",
 		{
 			"c": 2,
@@ -444,13 +407,11 @@
 	],
 	"xinyan": [
 		"dps",
-		"burst",
 		"amp",
 		"shield"
 	],
 	"yae_miko": [
 		"dps",
-		"burst",
 		"off_field",
 		{
 			"c": 4,
@@ -465,7 +426,6 @@
 		}
 	],
 	"yaoyao": [
-		"burst",
 		"off_field",
 		"heal"
 	],
@@ -479,12 +439,10 @@
 		"amp"
 	],
 	"yun_jin": [
-		"burst",
 		"amp"
 	],
 	"zhongli": [
 		"dps",
-		"burst",
 		"off_field",
 		"amp",
 		{
