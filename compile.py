@@ -28,6 +28,7 @@ with open("automatic/characters.genshindev-api.json") as f:
 			if (character_id in roles):
 				json_data["characters"][character_id]["roles"] = roles[character_id]
 			else:
+				json_data["characters"][character_id]["roles"] = []
 				warnings.warn(f"Roles data for character ID {character_id} is missing")
 
 
@@ -59,8 +60,9 @@ def parse_presets():
 	df_presets.dropna(inplace=True)
 	return df_presets.astype(int).values.tolist()
 
-
-json_data["presets"] = parse_presets()
+# Presets are currently disabled
+# json_data["presets"] = parse_presets()
+json_data["presets"] = []
 
 with open("manual/reactions.json") as f:
 	json_data["reactions"] = json.load(f)

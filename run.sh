@@ -3,7 +3,7 @@
 if [[ ! -d ".venv" ]]; then
 	echo 'Installing dependencies'
 
-	python -m venv .venv
+	python3 -m venv .venv
 	source .venv/bin/activate
 	pip install -r requirements.txt
 	deactivate
@@ -19,10 +19,11 @@ git submodule sync
 git submodule update --remote
 
 echo 'Running scrapers'
-env python ./genshin-gg-tierlist-scraper.py
-env python ./character-list-extractor.py
-env python ./teams-scraper.py
-env python ./compile.py
+env python3 ./genshin-gg-tierlist-scraper.py
+env python3 ./character-list-extractor.py
+# None of the extractors work anymore
+# env python3 ./teams-scraper.py
+env python3 ./compile.py
 
 deactivate
 
