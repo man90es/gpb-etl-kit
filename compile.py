@@ -6,7 +6,6 @@ import glob
 import json
 import os
 import pandas as pd
-import warnings
 
 
 json_data = {
@@ -14,22 +13,33 @@ json_data = {
 	"characters": {},
 }
 
-# Load characters' data from JSON
-with open("automatic/characters.genshindev-api.json") as f:
+# Load characters list from JSON
+with open("automatic/characters.genshin-wiki.json") as f:
 	chars = json.load(f)
-	characters_data = dict((get_character_id(c["name"], c["element"]), c) for c in chars)
+	# json_data["characters"] = dict((get_character_id(c["key"], "anemo"), c) for c in chars)
+	characters = dict((c["key"].lower(), c) for c in chars)
 
-	with open("manual/roles.json") as f:
-		roles = json.load(f)
+	index = 0
+	for character_id, character in characters.items():
+		with open(f"automatic/characters/{character_id.lower()}.json") as f:
+			characterData = json.load(f)
 
-		for character_id in characters_data:
-			json_data["characters"][character_id] = characters_data[character_id]
-
-			if (character_id in roles):
-				json_data["characters"][character_id]["roles"] = roles[character_id]
+			if character_id == "traveler":
+				for element in ["anemo", "geo", "electro", "dendro", "hydro", "pyro"]:
+					json_data["characters"][f"traveler_{element}"] = {
+						**character,
+						**characterData,
+						"id": index,
+						"element": element,
+					}
+					index += 1
 			else:
-				json_data["characters"][character_id]["roles"] = []
-				warnings.warn(f"Roles data for character ID {character_id} is missing")
+				json_data["characters"][character_id] = {
+					**character,
+					**characterData,
+					"id": index,
+				}
+				index += 1
 
 
 def extract_tierlist(path):
@@ -49,16 +59,16 @@ for character_id, character in json_data["characters"].items():
 	json_data["characters"][character_id]["score"] = score
 
 
-def parse_presets():
-	df_presets = pd.read_json("automatic/presets.gottsmillk.json")
+# def parse_presets():
+# 	df_presets = pd.read_json("automatic/presets.gottsmillk.json")
 
-	for character_id in list_uniques(list_flatten([df_presets[col].unique() for col in df_presets])):
-		is_known_char = character_id in json_data["characters"] and "id" in json_data["characters"][character_id]
-		numeric_id = json_data["characters"][character_id]["id"] if is_known_char else None
-		df_presets.replace({character_id: numeric_id}, inplace=True)
+# 	for character_id in list_uniques(list_flatten([df_presets[col].unique() for col in df_presets])):
+# 		is_known_char = character_id in json_data["characters"] and "id" in json_data["characters"][character_id]
+# 		numeric_id = json_data["characters"][character_id]["id"] if is_known_char else None
+# 		df_presets.replace({character_id: numeric_id}, inplace=True)
 
-	df_presets.dropna(inplace=True)
-	return df_presets.astype(int).values.tolist()
+# 	df_presets.dropna(inplace=True)
+# 	return df_presets.astype(int).values.tolist()
 
 # Presets are currently disabled
 # json_data["presets"] = parse_presets()
@@ -73,14 +83,14 @@ with open("manual/spritesheets.json") as f:
 with open("manual/assets.json") as f:
 	json_data["assets"] = json.load(f)
 
-with open("manual/renames.json") as f:
-	renames = json.load(f)
+# with open("manual/renames.json") as f:
+# 	renames = json.load(f)
 
-	for character_id in json_data["characters"]:
-		name = json_data["characters"][character_id]["name"]
+# 	for character_id in json_data["characters"]:
+# 		name = json_data["characters"][character_id]["name"]
 
-		if name in renames:
-			json_data["characters"][character_id]["name"] = renames[name]
+# 		if name in renames:
+# 			json_data["characters"][character_id]["name"] = renames[name]
 
 out_file = "output/data.json"
 

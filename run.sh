@@ -14,13 +14,14 @@ fi
 
 source .venv/bin/activate
 
-echo 'Updating submodules'
-git submodule sync
-git submodule update --remote
+# echo 'Updating submodules'
+# git submodule sync
+# git submodule update --remote
 
 echo 'Running scrapers'
 env python3 ./genshin-gg-tierlist-scraper.py
-env python3 ./character-list-extractor.py
+env python3 ./genshin-wiki-char-list-scraper.py
+env python3 ./genshin-wiki-char-scraper.py
 # None of the extractors work anymore
 # env python3 ./teams-scraper.py
 env python3 ./compile.py
