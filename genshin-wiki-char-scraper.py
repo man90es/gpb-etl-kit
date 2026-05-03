@@ -1,11 +1,11 @@
 #!env python
 
 from bs4 import BeautifulSoup
+import cloudscraper
 from datetime import datetime
 from time import sleep
 import json
 import os
-import requests
 
 
 bg_colours = {}
@@ -17,6 +17,7 @@ with open("automatic/characters.genshin-wiki.json") as f:
 	chars = json.load(f)
 
 base_uri = "https://genshin-impact.fandom.com/wiki/"
+scraper = cloudscraper.create_scraper()
 
 for i, char in enumerate(chars):
 	lower_key = char["key"].lower()
@@ -25,8 +26,8 @@ for i, char in enumerate(chars):
 		continue
 
 	sleep(5)
-	print(f"Scraping {char["key"]} ({i + 1}/{len(chars)})")
-	page = requests.get(base_uri + char["key"])
+	print(f"Scraping {char['key']} ({i + 1}/{len(chars)})")
+	page = scraper.get(base_uri + char["key"])
 	char_soup = BeautifulSoup(page.content, "html.parser")
 
 	stars = int(char_soup.css.select_one("td[data-source=quality] img")["alt"].split(" ")[0])

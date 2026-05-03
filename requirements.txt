@@ -1,4 +1,5 @@
 beautifulsoup4
+cloudscraper
 flake8
 numba
 numpy

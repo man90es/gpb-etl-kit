@@ -3,7 +3,7 @@
 from bs4 import BeautifulSoup
 from utils import get_character_id
 import json
-import requests
+import import cloudscraper
 
 
 def parse_constellation(str):
@@ -15,7 +15,8 @@ with open("manual/constellation-limits.json") as f:
 	c_limits = json.load(f)
 
 uri = "https://genshin.gg/tier-list/"
-page = requests.get(uri)
+scraper = cloudscraper.create_scraper()
+page = scraper.get(uri)
 
 soup = BeautifulSoup(page.content, "html.parser")
 tier_elements = soup.find_all("div", class_="dropzone-row")
