@@ -3,7 +3,7 @@
 from bs4 import BeautifulSoup
 from utils import get_character_id
 import json
-import import cloudscraper
+import cloudscraper
 
 
 def parse_constellation(str):
